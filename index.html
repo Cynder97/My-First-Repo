@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<h1>
-    Welcome to Samuel Bessenbacher's Website
-</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title>My Website</title>
+        <style>
+            h1{
+                color: magenta;
+                background-color: black;
+            }
+            p{
+                font-family: 'Times New Roman';
+                margin-left: 10px;
+            }
+            strong{
+                background-color: black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Samuel Bessenbacher's Website</h1>
+        <p>Who crossed the road? <strong id="chicken">The Chicken</strong></p>
+        <p>Change text color to:
+            <button id="black-btn">Black</button>
+            <button id="white-btn">White</button>
+        </p>
+
+        <script>
+            let blackBtn = document.getElementById("black-btn");
+            blackBtn.addEventListener("click", function() {
+            changeTextColor("black"); });
+
+            let whiteBtn = document.getElementById("white-btn");
+            whiteBtn.addEventListener("click", function() {
+            changeTextColor("white"); });
+
+            function changeTextColor(newColor) {
+                let strong = document.getElementById("chicken");
+                strong.style.color = newColor;
+            }
+        </script>
+    </body>
+</html>
